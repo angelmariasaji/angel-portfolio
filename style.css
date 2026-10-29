@@ -1,6 +1,148 @@
-body {
-    font-family: Arial,sans-serif;
+/* ==========================================================================
+   Apple-Inspired Personal Portfolio Stylesheet
+   Designed for: Angel Maria Saji (Software Engineer)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS RESET & CUSTOM PROPERTIES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: aliceblue;
 }
+
+:root {
+    --bg-color: #000000;
+    --card-bg: rgba(22, 22, 23, 0.8);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-hover-border: rgba(255, 255, 255, 0.25);
+    --text-primary: #f5f5f7;
+    --text-secondary: #86868b;
+    --accent-blue: #2997ff;
+    --accent-glow: rgba(41, 151, 255, 0.15);
+    --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --nav-height: 44px;
+    --max-width: 980px;
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   2. NAVIGATION BAR
+   -------------------------------------------------------------------------- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-content {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 0 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+}
+
+.nav-brand {
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   3. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+    position: relative;
+}
+
+.hero-title {
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    background: linear-gradient(180deg, #FFFFFF 0%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.hero-subtitle {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    max-width: 600px;
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #0071e3;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 980px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.cta-button:hover {
+    background-color: #0077ed
